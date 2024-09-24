@@ -1,0 +1,41 @@
+import java.util.Scanner;
+public class Contador {
+    int numero;
+    public void numero() {
+        Scanner sc = new Scanner(System.in);
+        int numero = 0;
+        this.numero = numero;
+        System.out.println("Digite o número e veja os 100 próximos");
+        numero = sc.nextInt();
+        for (int i =1; i <=100; i++) {
+            System.out.println(++numero);
+        }
+
+    }
+}
+
+import java.util.Scanner;
+public class Main {
+    //1. Crie um programa que imprima a sequência dos 100 próximos números inteiros, seguintes a um
+    //valor fornecido pela pessoa utilizadora.
+
+    public static void main(String[] args) {
+        Contador cem = new Contador();
+        Scanner sc = new Scanner(System.in);
+        int condição;
+        do {
+            cem.numero();
+            while(true) {
+                System.out.println("Deseja digitar outro número?");
+                System.out.println("1-SIM");
+                System.out.println("2-NÃO");
+                condição = sc.nextInt();
+                if (condição < 1 || condição > 2) {
+                    System.out.println("Número invalido. Tente novamente.");
+                    continue;
+                }
+                break;
+            }
+        }while(condição !=1);
+    }
+}
