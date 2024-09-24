@@ -1,0 +1,19 @@
+//Escreva um programa em Java que calcule o produto de A (número real) por B (número inteiro),
+//ou seja, A*B, por intermédio de adições sucessivas. Tanto A quanto B devem ser fornecidos
+//pela pessoa utilizadora do programa.
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        double A, resultado=0;
+        int B;
+        System.out.println("Digite o valor do A:(Numero Real");
+        A = sc.nextDouble();
+        System.out.println("Digite o valor do B:(Número Inteiro)");
+        B = sc.nextInt();
+        for(int i = 1; i<=B; i++){
+            resultado +=A;
+        }
+        System.out.println("O resultado da multiplicação é "+resultado);
+    }
+}
