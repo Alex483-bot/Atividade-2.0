@@ -1,0 +1,69 @@
+import java.util.Scanner;
+public class Mensagens {
+    //
+    int kill, death, assist;
+    Scanner sc = new Scanner(System.in);
+    int kills;
+    int deaths;
+    int assists;
+    int totalkills;
+    int totaldeaths;
+    int totalassists;
+    int vencedor;
+    public void mensagens () {
+        do{
+            //Calcular o total de kills
+            System.out.println("Digite o total de kills:");
+            kills = sc.nextInt();
+            totalkills += kills;
+            if (totalkills <=5){
+                System.out.println("Noob");
+            }
+            else if (totalkills >=20){
+                System.out.println("Master");
+            }
+            //Calcular o total de deaths
+            System.out.println("Digite o total de deaths");
+            deaths = sc.nextInt();
+            totaldeaths += deaths;
+            if (totaldeaths >=20){
+                System.out.println("“Houston, we have a problem");
+            }
+            //Calcular o total de assistencias
+            System.out.println("Digite o total de assists");
+            assists = sc.nextInt();
+            totalassists += assists;
+            if (totalassists >=20){
+                System.out.println("Team work");
+            }
+            System.out.printf("\nResultados da rodada\nKills: %d\nDeaths: %d\nAssists: %d\n", kills , deaths, assists);
+            System.out.printf("\n A partida acabou?\n1- SIM\n2- NÃO\n");
+            vencedor = sc.nextInt();
+            if (vencedor == 1){
+                System.out.println ("Total de kills:"+totalkills);
+                System.out.println ("Total de deaths:"+totaldeaths);
+                System.out.println ("Total de assists:"+totalassists);
+                sc.close();
+                break;
+            }
+        }while (vencedor == 2);
+    }
+
+}
+import java.util.Scanner;
+public class Main {
+    //6. Em um campeonato de LOL, enquanto não há a tomada de território, o contador implementado
+    //deve contar (que é contabilizado pelo jogo), o número de kills, deaths e assists. Se o número
+    //de kills for menor ou igual a 5, ele mostra a mensagem “noob”, se chegar a 20 ou mais
+    //“master”. Se o número de deaths chegar a 20 ou mais, ele mostra a mensagem “Houston,
+    //we have a problem”. Se o número de assists chegar a 20 ou mais, é mostrada a mensagem:
+    //“team work”. Lembre-se, é uma rotina que continua enquanto não houver um vencedor.
+    //• há kills, deaths e assists total e da rodada
+    //• medite na frase: enquanto não há um vencedor, faça?
+    //• pergunte a cada loop o número de cada medida comentada.
+    //• você deve perguntar se há um vencedor a cada loop?
+    public static void main(String[] args) {
+        Mensagens p1 = new Mensagens();
+        p1.mensagens();
+    }
+}
