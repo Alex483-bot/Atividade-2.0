@@ -1,0 +1,35 @@
+public class Massa {
+    static double massa, meiavida;
+    int tempo;
+
+    public int massa() {
+        this.meiavida = meiavida;
+        while (massa >= 0.1) {
+            massa *= 0.25;
+            this.massa = massa;
+            tempo += 30;
+            this.tempo = tempo;
+        }
+        return tempo;
+    }
+}
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        //3. Na usina de Angra dos Reis, os técnicos analisam a perda de massa de um material radioativo.
+        //Sabendo-se que este perde 25% de sua massa a cada 30 segundos. Criar um programa que
+        //calcule iterativamente e imprima o tempo necessário para que a massa deste material se torne
+        //menor que 0, 10 grama. O programa pode calcular o tempo para várias massas.
+        Scanner sc = new Scanner(System.in);
+        int tempo, decisao;
+        do {
+            System.out.println("Digite a massa: ");
+            Massa.massa = sc.nextDouble();
+            Massa elemento = new Massa();
+            tempo = elemento.massa();
+            System.out.printf("O tempo necessario para o elemento decair para menos de 0,1 gramas é %d segundos", tempo);
+            System.out.println("\nDeseja reiniciar o programa?\n1-Sim\n2-Não");
+            decisao = sc.nextInt();
+        }while(decisao == 1);
+    }
+}
