@@ -1,0 +1,29 @@
+import java.util.Scanner;
+public class Main{
+    //Crie um programa que lê vários números inteiros e positivos e imprima o produto dos números
+    //ímpares e a soma dos números pares. Observação: O programa será encerrado quando um
+    //valor negativo for inserido
+    public static void main(String[] args){
+        int numero, soma, produto;
+        soma=0;
+        produto =1;
+
+        Scanner sc = new Scanner(System.in);
+
+        do{
+            System.out.println("Digite o valor do número:");
+            numero = sc.nextInt();
+            if (numero % 2 == 0) {
+                soma +=numero;
+                System.out.println("A soma dos números é: "+soma);
+            }
+            else if (numero % 2 ==1) {
+                produto *= numero;
+                System.out.println("O produto dos números é: "+produto);
+
+            }
+
+        }while(numero >= 0);
+        sc.close();
+    }
+}
