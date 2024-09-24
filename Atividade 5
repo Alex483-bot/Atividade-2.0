@@ -1,0 +1,39 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        //5. Faça um algoritmo que receba a idade, altura e peso de 10 pessoas. Calcule e mostre:
+        //(a) a quantidade de pessoas com idade superior a 50 anos;
+        //(b) a média das alturas das pessoas com idade entre 10 e 20 anos;
+        //(c) a porcentagem de pessoas com peso inferior a 40 quilos entre todas as pessoas
+        Scanner sc = new Scanner(System.in);
+        int idade, contador=0;
+        double peso, altura, totalAltura=0;
+        int idade50=0;
+        double mediaAltura = 0;
+        double menor40 = 0;
+        for (int i = 0; i < 10; i++) {
+            System.out.println("Digite a idade da pessoa");
+            idade = sc.nextInt();
+            System.out.println("Digite a altura da pessoa");
+            altura = sc.nextDouble();
+            System.out.println("Digite o peso da pessoa");
+            peso = sc.nextDouble();
+            if (idade > 10 && idade < 20) {
+                contador++;
+                mediaAltura += altura;
+
+            }
+            if (idade > 50) {
+                idade50++;
+            }
+            if (peso < 40) {
+                menor40++;
+            }
+        }
+        System.out.println("A quantidade de pessoas com mais de 50 anos é"+idade50);
+        mediaAltura =mediaAltura/contador;
+        System.out.println("A media da altura é "+mediaAltura+ "m");
+        menor40 = (menor40/10) *100;
+        System.out.printf("A porcentagem de pessoas com peso menor que 40 é %.0f%%",menor40);
+    }
+}
